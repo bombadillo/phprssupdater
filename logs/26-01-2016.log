@@ -1,0 +1,4 @@
+[16-01-26 03-01-01] [trace] [XLog\Logger.Log] App Started
+[16-01-26 03-01-01] [info] [Rss\NewContentChecker.checkForNewContent] GUID file is empty
+[16-01-26 03-01-01] [info] [Rss\OutputUpdater.updateOutput -> Rss\GuidUpdater.update] Updating GUIDs
+[16-01-26 03-01-01] [info] [Rss\OutputUpdater.updateOutput -> Rss\GuidUpdater.update] GUIDs updated

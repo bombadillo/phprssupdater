@@ -5,18 +5,17 @@
   include_once 'app\rss\outputUpdater.php';
   include_once 'app\config\rss.php';
   include_once 'app\config\util.php';
-  include_once 'app\util\fileLogger.php';
+  include_once 'app\util\XLog\Logger.php';
 
   use Rss\Fetcher;
   use Rss\NewContentChecker;
   use Rss\OutputUpdater;
   use Config\Rss as RssConfig;
   use Config\Util as UtilConfig;
-  use gehaxelt\fileLogger\FileLogger;
+  use XLog\Logger;
 
-  $log = new FileLogger(__DIR__ . UtilConfig::$logFileLocation . date('d-m-Y'));
-
-  $log->log('App started', FileLogger::NOTICE);
+  $log = new Logger();
+  $log->log('trace', 'App Started');
 
   $rssFeed = Fetcher::get(RssConfig::$rssFeedUrl);
 
@@ -28,5 +27,5 @@
   }
   else
   {
-    $log->log('No new RSS items detected', FileLogger::NOTICE);
+    $log->log('info', 'No new items detected');
   }

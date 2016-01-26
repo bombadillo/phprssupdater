@@ -4,14 +4,20 @@ namespace Rss;
 
 include_once 'app\config\rss.php';
 include_once 'app\rss\GuidFileHandler.php';
+include_once 'app\util\XLog\Logger.php';
 
 use Config\Rss as Config;
 use Rss\GuidFileHandler;
+use XLog\Logger;
 
 class GuidUpdater
 {
   public static function update($rssItems)
   {
+    $log = new Logger();
+
+    $log->log('info', 'Updating GUIDs');
+
     GuidFileHandler::addGuidFileIfNotExists();
 
     $aGuids = [];
@@ -21,6 +27,8 @@ class GuidUpdater
     }
 
     GuidFileHandler::updateGuids($aGuids);
+
+    $log->log('info', 'GUIDs updated');
   }
 
 
