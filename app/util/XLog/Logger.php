@@ -25,7 +25,7 @@ class Logger
 
   public function Log($level, $message)
   {
-    ConsoleOutputter::Output($level, $message, $this->Config->console->enable);
-    LogFileOutputter::Output($this->LogFile, $level, $message, $this->Config->logFile->enable);    
+    ConsoleOutputter::Output($level, $message, $this->Config);
+    LogFileOutputter::Output($this->LogFile, $level, $message, $this->Config);
   }
 }
