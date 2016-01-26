@@ -14,9 +14,9 @@ class GuidUpdater
 {
   public static function update($rssItems)
   {
-    $log = new Logger();
+    $logger = new Logger();
 
-    $log->log('info', 'Updating GUIDs');
+    $logger->log('info', 'Updating GUIDs');
 
     GuidFileHandler::addGuidFileIfNotExists();
 

@@ -25,7 +25,7 @@ class RssProcessor
         $containsNewContent = NewContentChecker::checkForNewContent($rssFeed);
 
         if ($containsNewContent) {
-            $logger->log('info', 'Updating output');
+            $logger->log('info', 'New items detected');
             OutputUpdater::updateOutput($rssFeed);
             GuidUpdater::update($rssFeed->channel->item);
         } else {
