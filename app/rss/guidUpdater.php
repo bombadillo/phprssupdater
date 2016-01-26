@@ -27,8 +27,6 @@ class GuidUpdater
     }
 
     GuidFileHandler::updateGuids($aGuids);
-
-    $log->log('info', 'GUIDs updated');
   }
 
 
