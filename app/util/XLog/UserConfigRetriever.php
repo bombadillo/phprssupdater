@@ -2,7 +2,7 @@
 
 namespace XLog;
 
-class ConfigRetriever
+class UserConfigRetriever
 {
   public static function Get()
   {

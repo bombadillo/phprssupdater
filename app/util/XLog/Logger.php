@@ -2,12 +2,12 @@
 
 namespace XLog;
 
-include_once 'ConfigRetriever.php';
+include_once 'UserConfigRetriever.php';
 include_once 'LogFileInitialiser.php';
 include_once 'LogFileOutputter.php';
 include_once 'ConsoleOutputter.php';
 
-use XLog\ConfigRetriever;
+use XLog\UserConfigRetriever;
 use XLog\LogFileInitialiser;
 use XLog\LogFileOutputter;
 use XLog\ConsoleOutputter;
@@ -19,7 +19,7 @@ class Logger
 
   function __construct()
   {
-    $this->Config = ConfigRetriever::Get();
+    $this->Config = UserConfigRetriever::Get();
     $this->LogFile = LogFileInitialiser::Setup($this->Config->logFile);
   }
 
